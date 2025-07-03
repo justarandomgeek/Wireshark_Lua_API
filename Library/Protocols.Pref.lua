@@ -17,8 +17,8 @@ function Pref.bool(label, default, descr) end
 --- @param label string The Label (text in the right side of the preference input) for this preference.
 --- @param default number The default value for this preference.
 --- @param descr string A description of what this preference is.
-
 function Pref.uint(label, default, descr) end
+
 --- Creates a string preference to be added to a Proto.prefs Lua table.
 --- @param label string The Label (text in the right side of the preference input) for this preference.
 --- @param default string The default value for this preference.

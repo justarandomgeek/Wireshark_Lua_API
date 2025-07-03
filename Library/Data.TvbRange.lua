@@ -13,7 +13,7 @@ TvbRange = {}
 local tvbrange = {}
 
 --- Creates a new Tvb from a TvbRange.
---- @return TvbRange
+--- @return Tvb
 function tvbrange:tvb() end
 
 --- Get a Big Endian (network order) unsigned integer from a TvbRange. The range must be 1-4 octets long.

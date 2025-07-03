@@ -26,11 +26,14 @@ function treeitem:add_packet_field(protofield, tvbrange, encoding, label) end
 --- Adds a child item to this tree item, returning the new child TreeItem.
 --- If the ProtoField represents a numeric value (int, uint or float), then it’s treated as a Big Endian (network order) value.
 --- This function has a complicated form: 'treeitem:add(protofield, tvbrange, value, label)', such that if the first argument is a ProtoField or a Proto, the second argument is a TvbRange, and a third argument is given, it’s a value; but if the second argument is a non-TvbRange, then it’s the value (as opposed to filling that argument with 'nil', which is invalid for this function). If the first argument is a non-ProtoField and a non-Proto then this argument can be either a TvbRange or a label, and the value is not in use.
---- @param protofield? ProtoField  The ProtoField field or Proto protocol object to add to the tree.
+--- @param protofield? ProtoField|Proto  The ProtoField field or Proto protocol object to add to the tree.
 --- @param tvbrange? TvbRange  The TvbRange of bytes in the packet this tree item covers/represents.
---- @param value? number  The field’s value, instead of the ProtoField/Proto one.
+--- @param value? number|string  The field’s value, instead of the ProtoField/Proto one.
 --- @param label? string One or more strings to use for the tree item label, instead of the ProtoField/Proto one.
 --- @return TreeItem TreeItem The new child TreeItem.
+--- @overload fun(self:TreeItem, protofield:ProtoField|Proto, value?:number|string, label?:string):TreeItem
+--- @overload fun(self:TreeItem, tvbrange:TvbRange):TreeItem
+--- @overload fun(self:TreeItem, label:string):TreeItem
 function treeitem:add(protofield, tvbrange, value, label) end
 
 --- Adds a child item to this tree item, returning the new child TreeItem.

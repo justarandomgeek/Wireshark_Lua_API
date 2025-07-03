@@ -9,10 +9,10 @@ DissectorTable = {}
 
 ---Creates a new DissectorTable for your dissector’s use.
 --- @param tablename string The short name of the table. Use lower-case alphanumeric, dot, and/or underscores (e.g., "ansi_map.tele_id" or "udp.port").
---- @param uiname string optional: The name of the table in the user interface. Defaults to the name given in tablename, but can be any string.
---- @param type number One of ftypes.UINT8, ftypes.UINT16, ftypes.UINT24, ftypes.UINT32, or ftypes.STRING. Defaults to ftypes.UINT32
---- @param base number One of base.NONE, base.DEC, base.HEX, base.OCT, base.DEC_HEX or base.HEX_DEC. Defaults to base.DEC.
---- @param proto Proto The Proto object that uses this dissector table.
+--- @param uiname? string optional: The name of the table in the user interface. Defaults to the name given in tablename, but can be any string.
+--- @param type? number One of ftypes.UINT8, ftypes.UINT16, ftypes.UINT24, ftypes.UINT32, or ftypes.STRING. Defaults to ftypes.UINT32
+--- @param base? number One of base.NONE, base.DEC, base.HEX, base.OCT, base.DEC_HEX or base.HEX_DEC. Defaults to base.DEC.
+--- @param proto? Proto The Proto object that uses this dissector table.
 --- @return DissectorTable @The newly created DissectorTable.
 function DissectorTable.new(tablename, uiname, type, base, proto) end
 
@@ -47,7 +47,6 @@ function dissectortable:add(pattern, dissector) end
 --- Clear all existing dissectors from a table and add a new dissector or a range of new dissectors.
 --- @param pattern number|string The pattern to match (either an integer, a integer range or a string depending on the table’s type)
 --- @param dissector Proto|Dissector The dissector to add (either a Proto or a Dissector)
-
 function dissectortable:set(pattern, dissector) end
 
 --- Remove a dissector or a range of dissectors from a table.

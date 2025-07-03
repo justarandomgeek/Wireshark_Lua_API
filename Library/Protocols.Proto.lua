@@ -5,7 +5,7 @@
 
 --- A new protocol in Wireshark. Protocols have several uses. The main one is to dissect a protocol, but they can also be dummies used to register preferences for other purposes
 --- @class Proto
---- @field public dissector function The protocol’s dissector, a function you define.
+--- @field public dissector fun(buffer:Tvb, pinfo:Pinfo, tree:TreeItem) The protocol’s dissector, a function you define.
 --- When later called, the function will be given:
 ---     A Tvb object
 ---     A Pinfo object
@@ -15,7 +15,7 @@
 --- @field public init function The init routine of this dissector, a function you define. The called init function is passed no arguments.
 --- @field public name string The name given to this dissector.
 --- @field public description string The description given to this dissector.
---- @field public fields ProtoField The `ProtoField`s Lua table of this dissector.
+--- @field public fields ProtoField[] The `ProtoField`s Lua table of this dissector.
 --- @field public experts ProtoExpert The expert info Lua table of this Proto.
 Proto = {}
 

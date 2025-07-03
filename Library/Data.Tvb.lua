@@ -10,6 +10,7 @@
 Tvb = {}
 
 --- @class Tvb
+--- @overload fun(offset?:integer, length?:integer):TvbRange
 local tvb = {}
 
 --- Convert the bytes of a Tvb into a string. This is primarily useful for debugging purposes since the string will be truncated if it is too long.

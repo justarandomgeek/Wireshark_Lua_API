@@ -3,7 +3,7 @@
 DESEGMENT_ONE_MORE_SEGMENT = 1
 
 -- Wiretap encapsulations XXX
---- @class wtap_encaps
+--- @enum wtap_encaps
 wtap_encaps = {
 	["PER_PACKET"] = -1,
 	["UNKNOWN"] = 0,
@@ -221,7 +221,7 @@ wtap_encaps = {
 	["ETW"] = 212,
 	["ERI_ENB_LOG"] = 213
 }
---- @class wtap
+---@alias wtap wtap_encaps
 wtap = wtap_encaps -- for bw compatibility
 
 
@@ -255,7 +255,7 @@ wtap_comments = {
 }
 
 -- Field Types
---- @class ftypes
+--- @enum ftypes
 ftypes = {
 	["NONE"] = 0,
 	["PROTOCOL"] = 1,
@@ -337,7 +337,7 @@ wtap_presence_flags = {
 }
 
 -- Display Bases
---- @class base
+--- @enum base
 base = {
 	["NONE"] = 0,  -- none
 	["DEC"] = 1,  -- decimal
