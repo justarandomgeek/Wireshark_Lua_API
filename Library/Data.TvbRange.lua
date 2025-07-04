@@ -10,6 +10,7 @@
 TvbRange = {}
 
 --- @class TvbRange
+--- @overload fun(offset?:integer, length?:integer):TvbRange
 local tvbrange = {}
 
 --- Creates a new Tvb from a TvbRange.

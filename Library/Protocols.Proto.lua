@@ -17,6 +17,7 @@
 --- @field public description string The description given to this dissector.
 --- @field public fields ProtoField[] The `ProtoField`s Lua table of this dissector.
 --- @field public experts ProtoExpert The expert info Lua table of this Proto.
+--- @overload fun(name:string, desc:string):Proto
 Proto = {}
 
 --- @param name string The name of the protocol.
@@ -26,12 +27,6 @@ function Proto.new(name, desc) end
 
 --- @class Proto
 local proto = {}
-
---- Creates a Proto object.
---- @param name string The name of the protocol.
---- @param desc string A Long Text description of the protocol (usually lowercase).
---- @return Proto The new Proto object.
-function proto:__call(name, desc) end
 
 --- Registers a heuristic dissector function for this Proto protocol, for the given heuristic list name.
 --- When later called, the passed-in function will be given:
